@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: studentapiv1
+    
+  datasource:
+    url: jdbc:mysql://localhost:3306/university
+    username: root
+    password: Maheb052002
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto: update
+server:
+  port: 8083
+  
+  
+address:
+  microservice:
+    url: http://localhost:8082
