@@ -1,0 +1,52 @@
+spring:
+  application:
+    name: studentapiv3
+    
+  datasource:
+    url: jdbc:mysql://localhost:3306/university
+    username: root
+    password: Maheb052002
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto: update
+server:
+  port: 8083
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+  
+address:
+  microservice:
+    url: http://localhost:8082
+    
+    
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, metrics
+  health:
+    resilience4j:
+      enabled: true # Enable health checks for Circuit Breaker
+
+resilience4j:
+  circuitbreaker:
+    configs:
+      default:
+       sliding-window-type: COUNT_BASED
+       sliding-window-size: 10
+       minimum-number-of-calls: 5
+       failure-rate-threshold: 50
+       wait-duration-in-open-state: 10s
+       permitted-number-of-calls-in-half-open-state: 3
+       automatic-transition-from-open-to-half-open-enabled: true
+    instances:
+      addressService:
+       base-config: default
+      
+      

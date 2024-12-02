@@ -8,11 +8,11 @@
 		<version>3.3.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.studentapiv2</groupId>
-	<artifactId>studentapiv2</artifactId>
+	<groupId>com.studentapiv3</groupId>
+	<artifactId>studentapiv3</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>studentapiv2</name>
-	<description>studentapiv2</description>
+	<name>studentapiv3</name>
+	<description>studentapiv3</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
@@ -63,6 +63,27 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-openfeign</artifactId>
 		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-loadbalancer</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>io.github.resilience4j</groupId>
+			<artifactId>resilience4j-spring-boot2</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		
 	</dependencies>
 
 	<build>
